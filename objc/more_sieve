@@ -1,0 +1,27 @@
+#import <Foundation/Foundation.h>
+
+(NSNumber *) sieve(int limit){
+	if (limit == 0){
+		return (NSNumber *) nil;
+	}
+	NSNumber *p[limit];
+	/*initialize with True's*/
+	int i =0;
+	for (;i<limit;i++){
+		p[i] = [NSNumber numberWithInt: 0];
+	}
+	/*start marking*/
+	int j=0;
+	for (i=0;i<sqrt(limit);i++){
+		if ([p[i] intValue] == 0){ //if the number is marked as a possible prime, traverse the multiples for this number
+			for (j=i*i;j<limit;j+=i){
+				p[j] = 1; //mark this as false
+			}	
+		}
+	}
+	NSMutableArray primes
+	
+}
+int main(int argc,char * argv[]){
+	NSUserDefaults * defaults = [NSUserDefaults standardUserDefaults];
+}
